@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "JobTrack",
+    "slug": "JobTrack",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./ScaffoldTracker/assets/icon.png",
+    "splash": {
+      "image": "./ScaffoldTracker/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./ScaffoldTracker/assets/favicon.png"
+    },
+    "description": "",
+    "android": {
+      "package": "com.tsumori.JobTrack"
+    }
+  }
+}
