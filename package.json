@@ -16,7 +16,7 @@
     "firebase": "^7.21.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
     "react-native-dialog-input": "^1.0.8",
     "react-native-dropdown-picker": "^3.6.8",
     "react-native-map-link": "^2.7.17",
