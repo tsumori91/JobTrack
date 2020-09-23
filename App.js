@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 import CompleteTracker from "./ScaffoldTracker/CompleteTracker";
+import firebaseConfig from "./ScaffoldTracker/assets/ApiKeys";
 
+firebase.initializeApp(firebaseConfig);
 export default class App extends Component {
   render() {
     return (
