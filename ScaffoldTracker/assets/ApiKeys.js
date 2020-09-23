@@ -1,5 +1,5 @@
 export default {
-  FirebaseConfig: {
+  firebaseConfig: {
     apiKey: "AIzaSyBbHqbuaLMFRHW5-a616UQCcjMeke82xxE",
     authDomain: "job-track-95704.firebaseapp.com",
     databaseURL: "https://job-track-95704.firebaseio.com",

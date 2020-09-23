@@ -13,6 +13,12 @@ import ScaffoldTracker from "./ScaffoldTracker";
 import { showLocation } from "react-native-map-link";
 import DialogInput from "react-native-dialog-input";
 import AsyncStorage from "@react-native-community/async-storage";
+import ApiKeys from "./assets/ApiKeys";
+import * as firebase from "firebase";
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(ApiKeys.firebaseConfig);
+}
 export default class CompleteTracker extends Component {
   state = {
     tracker: [{ id: 1, location: "", whoFor: "", status: "" }],
@@ -23,6 +29,15 @@ export default class CompleteTracker extends Component {
     this.getInitialState();
   }
   getInitialState = async () => {
+    if (firebase.database().ref().JobStatus !== null) {
+      firebase
+        .database()
+        .ref()
+        .on("value", (snapshot) =>
+          this.setState({ tracker: snapshot.val().JobStatus })
+        );
+      return;
+    }
     const jsonValue = await AsyncStorage.getItem("tracker");
     if (jsonValue) {
       tracker = JSON.parse(jsonValue);
@@ -43,6 +58,7 @@ export default class CompleteTracker extends Component {
     this.setState({ tracker });
     const jsonValue = JSON.stringify(this.state.tracker);
     await AsyncStorage.setItem("tracker", jsonValue);
+    firebase.database().ref().set({ JobStatus: this.state.tracker });
   };
   handleDelete = async (trackerID) => {
     this.setState({

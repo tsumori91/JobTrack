@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 import CompleteTracker from "./ScaffoldTracker/CompleteTracker";
-import firebaseConfig from "./ScaffoldTracker/assets/ApiKeys";
 
-firebase.initializeApp(firebaseConfig);
 export default class App extends Component {
   render() {
     return (
@@ -16,11 +14,5 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  login: {
-    flex: 1,
-    alignItems: "center",
-    alignContent: "center",
-    justifyContent: "center",
   },
 });
